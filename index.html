@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cinema</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	<label>Select a Branch:</label>
+  	<select v-model="selected_branch">
+ 	 <option disabled value="">Select a Branch</option>
+ 	 <option v-for="branch in branches" :value='branch'>{{ branch.name }}</option>
+	</select>
+	<br>
+	<label>Select a Movie:</label>
+	<select>
+		<option disabled value="">Select a Movie</option>
+		<option :value="movie.name" v-for="movie in selected_branch.movies">{{ movie.name }}</option>
+	</select>
+	</div>
+</body>
+<script type="text/javascript">
+  new Vue({
+  el: '#app',
+  data: {
+  	selected_branch: '',
+    branches: [
+    		{
+    			name: 'Cinema Baguio',
+    			movies: [
+    				{ name: 'The Joker'}, 
+    				{ name: 'Interstellar'}, 
+    				{ name: 'Shawshank Redemption'}, 
+    				{ name: 'Pulp Fiction'}, 
+    				{ name: 'Fight Club'}
+    			]
+    		},
+    		{
+    			name: 'Cinema Pasay',
+    			movies: [
+    				{ name: 'Predestination'}, 
+    				{ name: 'In Time'}, 
+    				{ name: 'Source Code'}, 
+    				{ name: 'Moron 5'}, 
+    				{ name: 'Robocop'}
+    			]
+    		},
+    		{
+    			name: 'Cinema Dagupan',
+    			movies: [
+    				{ name: 'Batman'}, 
+    				{ name: 'Superman'}, 
+    				{ name: 'Redemption'}, 
+    				{ name: 'Fiction'}, 
+    				{ name: 'Fight Night'}
+    			]
+    		},
+    		{
+    			name: 'Cinema Cubao',
+    			movies: [
+    				{ name: 'Cat Woman'}, 
+    				{ name: 'Spiderman'}, 
+    				{ name: 'Robinhood'}, 
+    				{ name: 'Cinderella'}, 
+    				{ name: 'Day and Night'}
+    			]
+    		},
+    		{
+    			name: 'Cinema Taguig',
+    			movies: [
+    				{ name: 'Wrong Turn'}, 
+    				{ name: 'Coming Soon'}, 
+    				{ name: 'Hills Have Eyes'}, 
+    				{ name: 'Dawn of the Dead'}, 
+    				{ name: 'Fight Daddy'}
+    			]
+    		}
+
+    ]
+  		}
+
+	})
+
+</script>
+</html>
